@@ -1,0 +1,332 @@
+ac-calendar {
+	position: relative;
+    width: 100%;
+    border-radius: 5px;
+	max-width: 100%;
+    margin: 80px;
+}
+
+ac-calendar ac-calendar-container {
+	display: flex;
+}
+
+ac-calendar ac-calendar-container ac-calendar-view {
+    flex: 3 1 0;
+}
+
+ac-calendar ac-calendar-container ac-calendar-view ac-controls {
+    display: flex;
+    background-color: rgb(63, 81, 181);
+    border: none;
+    height: 48px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    top: 0;
+    border-radius: 5px 5px 0 0;
+}
+
+ac-calendar ac-calendar-container ac-calendar-view ac-controls ac-actions {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    height: 100%;
+    left: 0;
+    padding: 0;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+ac-calendar ac-calendar-container ac-calendar-view ac-controls ac-actions ac-left {
+    float: left;
+}
+ac-calendar ac-calendar-container ac-calendar-view ac-controls ac-actions ac-right {
+    float: right;
+}
+
+ac-calendar ac-calendar-container ac-calendar-view ac-controls ac-actions ac-left,
+ac-calendar ac-calendar-container ac-calendar-view ac-controls ac-actions ac-right {
+    display: flex;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+ac-calendar ac-calendar-container ac-calendar-view ac-controls ac-actions ac-text {
+    flex-grow: 1;
+    padding: 0 12px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+ac-calendar ac-calendar-container ac-calendar-view ac-controls ac-actions ac-group-button {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+ac-calendar ac-calendar-container ac-calendar-view ac-controls ac-actions ac-group-button .ac-button {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    height: 100%;
+    padding: 6px 12px;
+    position: relative;
+    text-align: center;
+    outline: none;
+}
+
+ac-calendar ac-calendar-container ac-calendar-view ac-controls ac-actions ac-group-button .ac-button.ac-button-active {
+    background-color: #f2f2f2;
+    color: #337ab7;
+}
+
+
+/* Month View */
+
+ac-calendar ac-calendar-container ac-month-view {}
+
+ac-calendar ac-calendar-container ac-month-view.ng-hide-add,
+ac-calendar ac-calendar-container ac-month-view.ng-hide-remove {
+    transition: all 0.5s ease-in-out;
+}
+
+ac-calendar ac-calendar-container ac-month-view.ng-hide {
+    min-height: 0;
+    max-height: 0;
+    height: 0;
+    opacity: 0;
+    padding: 0;
+}
+
+ac-calendar ac-calendar-container ac-month-view ac-week-name {
+    height: 44px;
+    font-weight: bolder;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.02);
+    display: flex;
+    word-wrap: break-word;
+}
+
+ac-calendar ac-calendar-container ac-month-view ac-week-name ac-day-name {
+    padding: 12px;
+    width: 14.2857%;
+}
+
+ac-calendar ac-calendar-container ac-month-view ac-week-name ac-day-name .ac-day-name {
+    display: block;
+}
+
+ac-calendar ac-calendar-container ac-month-view ac-week-name ac-day-name .ac-day-name-short {
+    display: none;
+}
+
+ac-calendar ac-calendar-container ac-month-view ac-month {
+    display: block;
+    border: 1px solid #e1e1e1;
+}
+
+ac-month-view ac-month ac-week-events {}
+
+ac-month-view ac-month ac-week-events ac-week ,
+ac-month-view ac-month ac-week-events ac-events {
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+ac-month-view ac-month ac-week-events ac-week {}
+
+/* Month VIew */
+
+ac-month-view ac-month ac-week-events ac-week ac-day {
+    display: table-cell;
+    position: relative;
+    width: 14.2857%;
+    cursor: pointer;
+    border-right: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+ac-month-view ac-month ac-week-events:last-of-type ac-week ac-day {
+    border-bottom: none;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day:last-of-type {
+    border-right: none;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day:hover {
+    background-color: #e4e4e4 !important;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day ac-day-top,
+ac-month-view ac-month ac-week-events ac-week ac-day ac-day-bottom {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #333;
+    display: block;
+    height: 30%;
+    margin: 11px;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day ac-day-top {
+    text-align: center;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day ac-day-bottom {
+    text-align: right;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day {
+    outline: none;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day ac-day-top ac-day-label {
+    font-size: 1.7em;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day ac-day-bottom {
+    border-top: 1px solid #d5d5d5;
+    padding-top: 8px;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day.ac-ispast {
+    color: #ededed;
+    opacity: 0.4;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day.ac-outmonth {
+    opacity: 0.1;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day.ac-isweekend ac-day-top {
+    color: red;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day.ac-istoday {
+    background-color: rgba(0, 106, 253, 0.22);
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day.ac-istoday ac-day-bottom,
+ac-month-view ac-month ac-week-events ac-week ac-day.ac-isfuture  ac-day-bottom {
+    color: #0055bb;
+    font-weight: 600;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day.ac-eventFull ac-day-bottom {
+    color: #46a346;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day.ac-eventOverload ac-day-bottom {
+    color: #ff4719;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day.ac-eventFull ac-day-bottom {
+    color: #46a346;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day.ac-eventFull ac-day-bottom {
+    color: #46a346;
+}
+
+ac-month-view ac-month ac-week-events ac-week ac-day.ac-eventOpen {
+    background-color: #f1f1f1;
+}
+
+ac-event-view-container.drag-enter,
+ac-month-view ac-month ac-week-events ac-week ac-day.drag-enter {
+    background-color: rgba(255, 240, 0, 0.37) !important;
+}
+
+ac-month-view ac-month ac-week-events ac-events {
+    display: block;
+    padding: 10px;
+    max-height: 210px;
+    min-height: 70px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+ac-month-view ac-month ac-week-events ac-events.ng-hide-add,
+ac-month-view ac-month ac-week-events ac-events.ng-hide-remove {
+    transition: all 0.5s ease-in-out;
+}
+
+ac-month-view ac-month ac-week-events ac-events.ng-hide {
+    min-height: 0;
+    max-height: 0;
+    height: 0;
+    opacity: 0;
+    padding: 0;
+}
+
+ac-month-view ac-month ac-week-events ac-events ac-event.ac-draggable.dragging {
+    margin-left: 29%
+}
+
+
+/* Event View */
+
+ac-calendar ac-event-view {
+    flex: 1 1 auto;
+    background-color: rgba(0, 0, 0, 0.02);
+    border: 1px solid #e1e1e1;
+    position: relative;
+    min-width: 82px;
+    max-width: 400px;
+}
+
+ac-event-view ac-event-view-container {
+    display: block;
+    position: absolute;
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+ac-event-view ac-event-view-container ac-events {
+	padding: 5px;
+	display: block;
+}
+
+ac-month-view ac-month ac-week-events ac-events ac-event,
+ac-event-view-container ac-events ac-event {
+    margin-bottom: 2px;
+    padding: 8px;
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+    background-color: #f1f1f1;
+	display: flex;
+}
+
+ac-month-view ac-month ac-week-events ac-events ac-event.ac-draggable,
+ac-event-view-container ac-events ac-event.ac-draggable {
+    cursor: all-scroll;
+    background-color: rgba(29, 253, 51, 0.22);
+}
+
+ac-month-view ac-month ac-week-events ac-events ac-event.ac-draggable.dragging,
+ac-event-view-container ac-events ac-event.ac-draggable.dragging {
+    width: auto !important;
+    min-width: 200px !important;
+    cursor: move !important;
+}
+
+ac-event-view-container ac-events ac-event.ac-draggable.dragging {
+	margin-left: 8%
+}

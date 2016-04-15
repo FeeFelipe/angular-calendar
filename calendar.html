@@ -1,0 +1,360 @@
+<html lang="pt-br" ng-app="PlanMobApp" xml:lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" ng-cloak>
+
+<head>
+    <meta content="pt-br" name="language">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>PMove</title>
+    <link href="/favicon.ico" type="image/x-icon" rel="icon">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+
+
+    <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="layout1.css">
+    <link rel="stylesheet" href="calendar.css">
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+
+    <script src="moment.min.js"></script>
+    <script src="ngDraggable.js"></script>
+    <script src="ac.calendar.0.1.js"></script>
+
+    <script type="text/javascript">
+        'use strict';
+
+        (function() {
+            var app = angular.module('PlanMobApp', ['ngMaterial', 'ngRoute', 'acCalendar']);
+
+            app.config(function($acCalendarProvider) {
+                $acCalendarProvider.setOptions({
+                    i18n : {previous : '<<', next:'>>'}
+                });
+            });
+            app.controller('bController', function($scope) {
+                var calendar1 = {
+                    calendarView : 'month',
+                    showToday    : true,
+                    eventView    : true,
+                    view : [
+                        {
+                            type  : 'month',
+                            start : '',
+                            end   : ''
+                        },
+                        {
+                            type  : 'week',
+                            start : '',
+                            end   : ''
+                        },
+                        {
+                            type  : 'day',
+                            start : '',
+                            end   : ''
+                        }
+                    ],
+                    events: [
+                        {
+                            title     : 'Hoje',
+                            data      : {},
+                            cssClass  : 'warning',
+                            start     : moment().startOf('day').add(1, 'hour'),
+                            end       : moment().startOf('day').add(1, 'hour'),
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            title     : '1 mês atrás',
+                            data      : {},
+                            cssClass  : 'warning',
+                            start     : moment().startOf('day').subtract(1, 'month').add(1, 'hour'),
+                            end       : moment().startOf('day').add(1, 'hour'),
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            title     : 'amanhã oidasnodiaso dasi das dusa dpuas dpsandp jd iasj ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            start     : moment().startOf('day').add(1, 'day').add(1, 'hour'),
+                            end       : moment().startOf('day').add(1, 'hour'),
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            title     : 'amanhã oidasnodiaso dasi das dusa dpuas dpsandp jd iasj ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            start     : moment().startOf('day').add(1, 'day').add(1, 'hour'),
+                            end       : moment().startOf('day').add(1, 'hour'),
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            title     : 'amanhã oidasnodiaso dasi das dusa dpuas dpsandp jd iasj ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            start     : moment().startOf('day').add(1, 'day').add(1, 'hour'),
+                            end       : moment().startOf('day').add(1, 'hour'),
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            title     : 'amanhã oidasnodiaso dasi das dusa dpuas dpsandp jd iasj ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            start     : moment().startOf('day').add(1, 'day').add(1, 'hour'),
+                            end       : moment().startOf('day').add(1, 'hour'),
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            title     : 'amanhã oidasnodiaso dasi das dusa dpuas dpsandp jd iasj ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            start     : moment().startOf('day').add(1, 'day').add(1, 'hour'),
+                            end       : moment().startOf('day').add(1, 'hour'),
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            title     : 'amanhã oidasnodiaso dasi das dusa dpuas dpsandp jd iasj ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            start     : moment().startOf('day').add(1, 'day').add(1, 'hour'),
+                            end       : moment().startOf('day').add(1, 'hour'),
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            title     : 'amanhã oidasnodiaso dasi das dusa dpuas dpsandp jd iasj ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            start     : moment().startOf('day').add(1, 'day').add(1, 'hour'),
+                            end       : moment().startOf('day').add(1, 'hour'),
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            title     : 'amanhã',
+                            data      : {},
+                            cssClass  : 'warning',
+                            start     : moment().startOf('day').add(1, 'day').add(1, 'hour'),
+                            end       : moment().startOf('day').add(1, 'hour'),
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'amanhã draggable false',
+                            data      : {},
+                            cssClass  : 'warning',
+                            start     : moment().startOf('day').add(1, 'day').add(1, 'hour'),
+                            end       : moment().startOf('day').add(1, 'hour'),
+                            editable  : true,
+                            deletable : false,
+                            draggable : false
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem data',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        },
+                        {
+                            group     : 9828,
+                            title     : 'Sem ',
+                            data      : {},
+                            cssClass  : 'warning',
+                            editable  : true,
+                            deletable : false,
+                            draggable : true
+                        }
+                    ],
+                    config: [
+                        {
+                            date      : moment().startOf('day'),
+                            maxEvents : 1,
+                            draggable : false
+                        },
+                        {
+                            date      : moment().startOf('day').add(1, 'day'),
+                            maxEvents : 2
+                        }
+                    ],
+                    group : [
+                        {
+                            id        : 9828,
+                            title     : 'Usuário 1',
+                            cssClass  : 'warning',
+                            start     : moment().startOf('day').add(1, 'day').add(1, 'hour'),
+                            end       : moment().startOf('day').add(1, 'hour'),
+                            deletable : false,
+                            draggable : true
+                        }
+                    ]
+                };
+
+                $scope.calendar1 = calendar1;
+            });
+        })();
+    </script>
+</head>
+
+<body layout="row" ng-controller="bController">
+<div layout="column" flex>
+    <div layout="row" flex>
+        <ac-calendar ng-model="calendar1">
+        </ac-calendar>
+
+        <!--<ac-calendar buttons="{next : false}"></ac-calendar>-->
+    </div>
+</div>
+</body>
