@@ -3,7 +3,7 @@
 <head>
     <meta content="pt-br" name="language">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>Calendar</title>
+    <title>PMove</title>
     <link href="/favicon.ico" type="image/x-icon" rel="icon">
     <!-- Angular Material style sheet -->
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
@@ -343,6 +343,22 @@
                 };
 
                 $scope.calendar1 = calendar1;
+				
+				$scope.acCalendarDropSuccess = function(event_in) {
+					console.log('Droped', event_in)
+				};
+				
+				$scope.acCalendarEventClick = function(event_in) {
+					console.log('Clicked', event_in);
+				};
+
+				$scope.acCalendarEventEdit = function(event_in) {
+					console.log('Edited', event_in);
+				};
+
+				$scope.acCalendarEventDeleted = function(event_in) {
+					console.log('Deleted', event_in);
+				};
             });
         })();
     </script>
@@ -351,7 +367,7 @@
 <body layout="row" ng-controller="bController">
 <div layout="column" flex>
     <div layout="row" flex>
-        <ac-calendar ng-model="calendar1">
+        <ac-calendar ng-model="calendar1" ac-controller="this">
         </ac-calendar>
 
         <!--<ac-calendar buttons="{next : false}"></ac-calendar>-->

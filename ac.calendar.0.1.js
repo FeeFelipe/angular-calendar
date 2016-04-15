@@ -51,10 +51,10 @@ angular.module('acCalendar', ['ngDraggable'])
             calendarView  : 'month',
             showToday     : false,
             eventView     : false,
-            view   : [],
-            config : [],
-            events : [],
-            group  : []
+            view          : [],
+            config        : [],
+            events        : [],
+            group         : []
         };
 
         var buttons = {
@@ -163,7 +163,8 @@ angular.module('acCalendar', ['ngDraggable'])
             restrict   : 'E',
             scope      : {
                 buttons : '=',
-                ngModel : '='
+                ngModel : '=',
+				acController: '='
             },
             template   : '<ac-calendar-container>' +
             '<ac-calendar-view>' +
@@ -298,7 +299,7 @@ angular.module('acCalendar', ['ngDraggable'])
             '</ac-week>' +
             '<ac-events class="ng-hide" ng-show="events[weekIndex].length">' +
             '<ac-event class="{{event.cssClass}}" ng-repeat="event in events[weekIndex]" data-allow-transform="false" ng-drag="{{event.draggable}}" ng-drag-data="{weekIndex: weekIndex, event: event}" ng-center-anchor="true" ng-class="{\'ac-draggable\': event.draggable}">' +
-            '{{event.title}}' +
+            '<span class="ac-event-click" ng-click="eventClick(event)">{{event.title}}</span>' +
             '</ac-event>' +
             '</ac-events>' +
             '</ac-week-events>' +
@@ -315,7 +316,7 @@ angular.module('acCalendar', ['ngDraggable'])
                             $scope.dateEventOpen = day_in;
                         }
                     };
-
+					
                     $scope.showTodayEvents = function (weekIndex_in, day_in) {
                         if ($scope.options.model.showToday) {
                             var today = moment().startOf('day');
@@ -331,7 +332,11 @@ angular.module('acCalendar', ['ngDraggable'])
                     $scope.clearEvents();
                 }
             },
-            link : function(scope, element, attr) {
+            link : function(scope, element, attr) {		
+				scope.eventClick = function (event_in) {
+					scope.acController.acCalendarEventClick(event_in);
+				}
+					
                 scope.onDropDay = function (day_in, data_in) {
                     var eventIndex;
                     var eventModelIndex = scope.ngModel.events.indexOf(data_in.event);
@@ -357,6 +362,8 @@ angular.module('acCalendar', ['ngDraggable'])
                     if (scope.dateEventOpen && scope.dateEventOpen.date.isSame(day_in.date)) {
                         scope.loadEvents(null, day_in);
                     }
+					
+					scope.acController.acCalendarDropSuccess(event);
                 };
             }
         };
@@ -368,7 +375,7 @@ angular.module('acCalendar', ['ngDraggable'])
             template : '<ac-event-view-container ng-drop="true" ng-drop-success="onDropEventView($data)">' +
             '<ac-events>' +
             '<ac-event class="{{event.cssClass}}" ng-repeat="event in eventView" ng-drag="{{event.draggable}}" ng-drag-data="{weekIndex: null, event: event}" data-allow-transform="false" ng-center-anchor="true" ng-class="{\'ac-draggable\': event.draggable}">' +
-            '{{event.title}}' +
+            '<span class="ac-event-click" ng-click="eventClick(event)">{{event.title}}</span>' +
             '</ac-event>' +
             '</ac-events>' +
             '</ac-event-view-container>',
@@ -376,7 +383,7 @@ angular.module('acCalendar', ['ngDraggable'])
                 $scope.eventView = $acCalendarService.filterEvents($scope.options.model.events);
 
                 $scope.onDropEventView = function (data_in) {
-                    if (data_in.weekIndex) {
+                    if (data_in && data_in.weekIndex) {
                         var eventModelIndex = $scope.ngModel.events.indexOf(data_in.event);
                         var eventIndex = $scope.events[data_in.weekIndex].indexOf(data_in.event);
 

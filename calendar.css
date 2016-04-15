@@ -314,10 +314,16 @@ ac-event-view-container ac-events ac-event {
 	display: flex;
 }
 
+ac-event-view-container ac-events ac-event.ac-draggable.dragging {
+	margin-left: 8%
+}
+
+/* Events Weeek-Events */
 ac-month-view ac-month ac-week-events ac-events ac-event.ac-draggable,
 ac-event-view-container ac-events ac-event.ac-draggable {
     cursor: all-scroll;
-    background-color: rgba(29, 253, 51, 0.22);
+    background-color: rgba(161, 253, 51, 0.22);
+    background-color: rgba(0, 45, 255, 0.22);
 }
 
 ac-month-view ac-month ac-week-events ac-events ac-event.ac-draggable.dragging,
@@ -327,6 +333,12 @@ ac-event-view-container ac-events ac-event.ac-draggable.dragging {
     cursor: move !important;
 }
 
-ac-event-view-container ac-events ac-event.ac-draggable.dragging {
-	margin-left: 8%
+ac-month-view ac-month ac-week-events ac-events ac-event .ac-event-click,
+ac-event-view-container ac-events ac-event .ac-event-click {
+	cursor: pointer;
+}
+
+ac-month-view ac-month ac-week-events ac-events ac-event .ac-event-click:hover,
+ac-event-view-container ac-events ac-event .ac-event-click:hover {
+	text-decoration: underline;
 }
